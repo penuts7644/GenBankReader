@@ -1,4 +1,4 @@
-# GenBankReader command line Java program #
+# Command line GenBank reader #
 
 ### What is this repository for? ###
 
