@@ -1,32 +1,51 @@
-========================
-BUILD OUTPUT DESCRIPTION
-========================
+====================================================================
+Command line GenBank reader
+====================================================================
 
-When you build an Java application project that has a main class, the IDE
-automatically copies all of the JAR
-files on the projects classpath to your projects dist/lib folder. The IDE
-also adds each of the JAR files to the Class-Path element in the application
-JAR files manifest file (MANIFEST.MF).
+
+What does the GenBank reader do?
+====================================================================
+The user is able to run this Java 8 program via command line. A few
+input options are available for the user:
+
+    Default options:
+        1. -h, --help, Display help for this program.
+        2. -i, --infile <INFILE>, Input Genbank file to proces.
+
+    Usecases:
+        1. -s, --summary, Creates a textual summary of the parsed
+		   Genbank file.
+        2. -G, --fetch_gene <GENE NAME (-PATTERN)>, Returns
+           nucleotide sequences of the genes that match the gene
+           name regex pattern, in Fasta format.
+        3. -C, --fetch_cds <PRODUCT NAME (-PATTERN)>, Returns the
+           amino acid sequences of the CDSs that match the product
+           name regex pattern, in Fasta format.
+        4. -F, --fetch_features <COORDINATES>, Returns all features
+           with name, type, start, stop and orientation between the
+           given coordinates. Only features that are completely
+           covered within the given region are listed.
+        5. -S, --find_sites <DNA SEQ WITH IUPAC CODES>, Lists the
+           locations of all the sites where the DNA pattern is
+           found: position, actual sequence and (if relevant) the
+           gene in which it resides.
+
+NOTE 1: -i option and one of the usecases (-s, -C, -G, -F, -S) are
+        required.
+
+NOTE 2: The GenBank reader assumes that only one DNA sequence
+        resides within a single GenBank file. If multi-GenBank file
+        is given, only the first item in the GenBank file will be
+        processed.
+
+How to run the file ?
+====================================================================
 
 To run the project from the command line, go to the dist folder and
 type the following:
 
-java -jar "GenBankReader.jar" 
+java -jar "GenBankReader.jar"
 
-To distribute this project, zip up the dist folder (including the lib folder)
-and distribute the ZIP file.
-
-Notes:
-
-* If two JAR files on the project classpath have the same name, only the first
-JAR file is copied to the lib folder.
-* Only JAR files are copied to the lib folder.
-If the classpath contains other types of files or folders, these files (folders)
-are not copied.
-* If a library on the projects classpath also has a Class-Path element
-specified in the manifest,the content of the Class-Path element has to be on
-the projects runtime path.
-* To set a main class in a standard Java project, right-click the project node
-in the Projects window and choose Properties. Then click Run and enter the
-class name in the Main Class field. Alternatively, you can manually type the
-class name in the manifest Main-Class element.
+The Line above will should be followed by at least one GenBank
+file (-i) and one of the five usecases (-s, -C, -G, -F, -S).
+Usecases 2, 3, 4 and 5 need an argument.
