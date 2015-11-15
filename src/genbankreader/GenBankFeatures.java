@@ -232,7 +232,7 @@ public class GenBankFeatures {
     * Get features that lay between min and max coordinates.
     * @param maxCoordinates is a string with min and max coordinates.
     * @return string with al found features.
-    * @trows NumberFormatException when maxCoordinates does not have correct format.
+    * @throws NumberFormatException when maxCoordinates does not have correct format.
     */
     public String fetchFeatures(final String maxCoordinates) {
 
