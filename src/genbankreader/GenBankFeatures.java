@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 /**
  * @author Wout van Helvoirt [wout.van.helvoirt@gmail.com]
- * @version 0.0.1
+ * @version 1.0.0
  */
 public class GenBankFeatures {
 
@@ -271,6 +271,8 @@ public class GenBankFeatures {
             } else {
                 return "No gene(s) or CDS(s) was/were found between '" + maxCoordinates + "' in the given GenBank.";
             }
+
+        /* If maxCoordinates does not have right format, return error string. */
         } catch (NumberFormatException e) {
             return "A problem occured: '" + maxCoordinates + "' should be two integers seperated by two dots.";
         }

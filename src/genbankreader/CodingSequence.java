@@ -7,7 +7,7 @@ package genbankreader;
 
 /**
  * @author Wout van Helvoirt [wout.van.helvoirt@gmail.com]
- * @version 0.0.1
+ * @version 1.0.0
  */
 public class CodingSequence {
 
