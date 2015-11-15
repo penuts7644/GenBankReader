@@ -2,7 +2,7 @@
 
 <ClassDiagram name="GenBankReader">
   <ClassDiagramComponents>
-    <Class name="ArgumentParser" package="genbankreader" visibility="public" xPosition="116.0" yPosition="103.0">
+    <Class name="ArgumentParser" package="genbankreader" visibility="public" xPosition="116.0" yPosition="256.0">
       <Fields>
         <Field name="args" type="String[]" visibility="private" isFinal="true"/>
         <Field name="allOptions" type="Options" visibility="private" isFinal="true"/>
@@ -22,7 +22,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="CodingSequence" package="genbankreader" visibility="public" xPosition="116.0" yPosition="412.0">
+    <Class name="CodingSequence" package="genbankreader" visibility="public" xPosition="116.0" yPosition="614.0">
       <Fields>
         <Field name="coordinates" type="Coordinates" visibility="private" isFinal="true"/>
         <Field name="product" type="String" visibility="private" isFinal="true"/>
@@ -48,7 +48,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Coordinates" package="genbankreader" visibility="public" xPosition="234.0" yPosition="955.0">
+    <Class name="Coordinates" package="genbankreader" visibility="public" xPosition="116.0" yPosition="1170.0">
       <Fields>
         <Field name="first" type="int" visibility="private" isFinal="true"/>
         <Field name="last" type="int" visibility="private" isFinal="true"/>
@@ -65,7 +65,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="GenBankFeatures" package="genbankreader" visibility="public" xPosition="1064.0" yPosition="352.0">
+    <Class name="GenBankFeatures" package="genbankreader" visibility="public" xPosition="1034.0" yPosition="554.0">
       <Fields>
         <Field name="definition" type="String" visibility="private" isFinal="true"/>
         <Field name="accession" type="String" visibility="private" isFinal="true"/>
@@ -109,7 +109,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="GenBankReader" package="genbankreader" visibility="public" isFinal="true" xPosition="742.0" yPosition="37.0">
+    <Class name="GenBankReader" package="genbankreader" visibility="public" isFinal="true" xPosition="116.0" yPosition="21.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="private"/>
@@ -123,7 +123,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Gene" package="genbankreader" visibility="public" xPosition="1273.0" yPosition="902.0">
+    <Class name="Gene" package="genbankreader" visibility="public" xPosition="1243.0" yPosition="1136.0">
       <Fields>
         <Field name="coordinates" type="Coordinates" visibility="private" isFinal="true"/>
         <Field name="gene" type="String" visibility="private" isFinal="true"/>
@@ -143,7 +143,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="GeneBankFileParser" package="genbankreader" visibility="public" xPosition="1369.0" yPosition="75.0">
+    <Class name="GeneBankFileParser" package="genbankreader" visibility="public" xPosition="639.0" yPosition="256.0">
       <Fields>
         <Field name="inputFile" type="String" visibility="private" isFinal="true"/>
       </Fields>
@@ -159,7 +159,7 @@
         <Method name="getInputName" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Enum name="SequenceOrientation" package="genbankreader" visibility="public" xPosition="602.0" yPosition="854.0">
+    <Enum name="SequenceOrientation" package="genbankreader" visibility="public" xPosition="555.0" yPosition="1052.0">
       <Literals>
         <Literal name="FORWARD"/>
         <Literal name="REVERSE"/>
