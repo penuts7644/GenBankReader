@@ -67,6 +67,6 @@ public class Gene {
 
     @Override
     public String toString() {
-        return "Coordinates: " + getCoordinates() + ", Gene: " + getGene()+ ", Direction: " + getDirection();
+        return "Coordinates: " + getCoordinates() + ", Gene: " + getGene() + ", Direction: " + getDirection();
     }
 }

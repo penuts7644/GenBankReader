@@ -6,6 +6,7 @@
 package genbankreader;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -195,5 +196,10 @@ public class ArgumentParser {
     */
     public final OptionGroup getSubOptions() {
         return subOptions;
+    }
+
+    @Override
+    public String toString() {
+        return "User arguments: " + Arrays.toString(getArgs()) + ", Available options: " + getAllOptions();
     }
 }

@@ -167,7 +167,7 @@ public class GenBankFeatures {
 
             Matcher matchGene = Pattern.compile(gene).matcher(i.getGene());
             if (matchGene.find()) {
-                sb.append(">gene " + i.getGene() + " sequence\n");
+                sb.append(">gene ".concat(i.getGene() + " sequence\n"));
 
                 /* Get sequence of matched gene, add newlines and append to sb. */
                 int lineLength = 80;
@@ -206,7 +206,7 @@ public class GenBankFeatures {
 
             Matcher matchCDS = Pattern.compile(cds).matcher(i.getProduct());
             if (matchCDS.find()) {
-                sb.append("\n>CDS " + i.getProduct() + " sequence\n");
+                sb.append("\n>CDS ".concat(i.getProduct() + " sequence\n"));
 
                 /* Get translated sequence of matched CDS, add newlines and append to sb. */
                 int lineLength = 80;
@@ -246,16 +246,16 @@ public class GenBankFeatures {
             if (g.getCoordinates().getFirst() > cs.getFirst()
                     && g.getCoordinates().getLast() < cs.getLast()) {
 
-                sb.append("\n" + g.getGene() + ";gene;" + g.getCoordinates().getFirst() + ";"
-                        + g.getCoordinates().getLast() + ";" + g.getDirection());
+                sb.append("\n".concat(g.getGene() + ";gene;" + g.getCoordinates().getFirst() + ";"
+                        + g.getCoordinates().getLast() + ";" + g.getDirection()));
 
                 /* If gene has been added, check for coresponding CDS element and add it to sb. */
                 for (CodingSequence c : getCdsElements()) {
                     if (g.getCoordinates().getFirst() == c.getCoordinates().getFirst()
                             && g.getCoordinates().getLast() == c.getCoordinates().getLast()) {
 
-                        sb.append("\n" + c.getProduct() + ";CDS;" + c.getCoordinates().getFirst() + ";"
-                                + c.getCoordinates().getLast() + ";" + g.getDirection());
+                        sb.append("\n".concat(c.getProduct() + ";CDS;" + c.getCoordinates().getFirst() + ";"
+                                + c.getCoordinates().getLast() + ";" + g.getDirection()));
                     }
                 }
             }
@@ -319,13 +319,13 @@ public class GenBankFeatures {
                         && i.getCoordinates().getLast() > startPosition) {
 
                     match = true;
-                    sb.append("\n" + (startPosition + 1) + ";" + matchSequence.group() + ";" + i.getGene());
+                    sb.append("\n".concat((startPosition + 1) + ";" + matchSequence.group() + ";" + i.getGene()));
                 }
             }
 
             /* When match not within gene position, append match as intergenic. */
             if (!match) {
-                sb.append("\n" + (startPosition + 1) + ";" + matchSequence.group() + ";INTERGENIC");
+                sb.append("\n".concat((startPosition + 1) + ";" + matchSequence.group() + ";INTERGENIC"));
             }
         }
 

@@ -51,6 +51,6 @@ public class Coordinates {
 
     @Override
     public String toString() {
-        return "Start: " + getFirst()+ ", Stop: " + getLast();
+        return "Start: " + getFirst() + ", Stop: " + getLast();
     }
 }

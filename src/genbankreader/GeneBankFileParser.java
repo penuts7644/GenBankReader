@@ -172,6 +172,11 @@ public class GeneBankFileParser {
         return inputFile;
     }
 
+    @Override
+    public String toString() {
+        return "Input file: " + getInputFile();
+    }
+
     /**
     * Get inputFileName value.
     * @return inputFile.

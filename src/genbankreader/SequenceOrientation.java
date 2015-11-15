@@ -34,6 +34,10 @@ public enum SequenceOrientation {
         this.type = type;
     }
 
+    /**
+    * Get the sequence orientation.
+    * @return type.
+    */
     public String getType() {
         return type;
     }
