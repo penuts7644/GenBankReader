@@ -9,13 +9,10 @@ The user is able to run this Java 8 program via command line. A few input option
   1. ```-h, --help, Display help for this program.```
   2. ```-i, --infile <INFILE>, Input Genbank file to proces.```
 
-
 ### Usecases: ###
 
   1. ```-s, --summary, Creates a textual summary of the parsed Genbank file.```
-  2. ```-G, --fetch_gene <GENE NAME (-PATTERN)>,
-  Returns nucleotide sequences of the genes that match the
-  gene name regex pattern, in Fasta format.```
+  2. ```-G, --fetch_gene <GENE NAME (-PATTERN)>, Returns nucleotide sequences of the genes that match the gene name regex pattern, in Fasta format.```
   3. ```-C, --fetch_cds <PRODUCT NAME (-PATTERN)>, Returns the amino acid sequences of the CDSs that match the product name regex pattern, in Fasta format.```
   4. ```-F, --fetch_features <COORDINATES>, Returns all features with name, type, start, stop and orientation between the given coordinates. Only features that are completely covered within the given region are listed.```
   5. ```-S, --find_sites <DNA SEQ WITH IUPAC CODES>, Lists the locations of all the sites where the DNA pattern is found: position, actual sequence and (if relevant) the gene in which it resides.```
