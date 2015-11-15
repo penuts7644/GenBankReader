@@ -2,7 +2,7 @@
 
 <ClassDiagram name="GenBankReader">
   <ClassDiagramComponents>
-    <Class name="ArgumentParser" package="genbankreader" visibility="public" xPosition="315.0" yPosition="-340.0">
+    <Class name="ArgumentParser" package="genbankreader" visibility="public" xPosition="116.0" yPosition="103.0">
       <Fields>
         <Field name="args" type="String[]" visibility="private" isFinal="true"/>
         <Field name="allOptions" type="Options" visibility="private" isFinal="true"/>
@@ -22,7 +22,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="CodingSequence" package="genbankreader" visibility="public" xPosition="-191.0" yPosition="20.0">
+    <Class name="CodingSequence" package="genbankreader" visibility="public" xPosition="116.0" yPosition="412.0">
       <Fields>
         <Field name="coordinates" type="Coordinates" visibility="private" isFinal="true"/>
         <Field name="product" type="String" visibility="private" isFinal="true"/>
@@ -48,7 +48,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Coordinates" package="genbankreader" visibility="public" xPosition="249.0" yPosition="422.0">
+    <Class name="Coordinates" package="genbankreader" visibility="public" xPosition="234.0" yPosition="955.0">
       <Fields>
         <Field name="first" type="int" visibility="private" isFinal="true"/>
         <Field name="last" type="int" visibility="private" isFinal="true"/>
@@ -65,7 +65,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="GenBankFeatures" package="genbankreader" visibility="public" xPosition="702.0" yPosition="20.0">
+    <Class name="GenBankFeatures" package="genbankreader" visibility="public" xPosition="1064.0" yPosition="352.0">
       <Fields>
         <Field name="definition" type="String" visibility="private" isFinal="true"/>
         <Field name="accession" type="String" visibility="private" isFinal="true"/>
@@ -109,7 +109,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="GenBankReader" package="genbankreader" visibility="public" isFinal="true" xPosition="48.0" yPosition="-221.0">
+    <Class name="GenBankReader" package="genbankreader" visibility="public" isFinal="true" xPosition="742.0" yPosition="37.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="private"/>
@@ -123,7 +123,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Gene" package="genbankreader" visibility="public" xPosition="702.0" yPosition="533.0">
+    <Class name="Gene" package="genbankreader" visibility="public" xPosition="1273.0" yPosition="902.0">
       <Fields>
         <Field name="coordinates" type="Coordinates" visibility="private" isFinal="true"/>
         <Field name="gene" type="String" visibility="private" isFinal="true"/>
@@ -143,7 +143,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="GeneBankFileParser" package="genbankreader" visibility="public" xPosition="702.0" yPosition="-272.0">
+    <Class name="GeneBankFileParser" package="genbankreader" visibility="public" xPosition="1369.0" yPosition="75.0">
       <Fields>
         <Field name="inputFile" type="String" visibility="private" isFinal="true"/>
       </Fields>
@@ -159,7 +159,7 @@
         <Method name="getInputName" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Enum name="SequenceOrientation" package="genbankreader" visibility="public" xPosition="-3.0" yPosition="647.0">
+    <Enum name="SequenceOrientation" package="genbankreader" visibility="public" xPosition="602.0" yPosition="854.0">
       <Literals>
         <Literal name="FORWARD"/>
         <Literal name="REVERSE"/>
@@ -167,18 +167,20 @@
     </Enum>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
+    <UseRelation source="genbankreader.GeneBankFileParser" target="genbankreader.GenBankFeatures" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="genbankreader.CodingSequence" target="genbankreader.SequenceOrientation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="genbankreader.GenBankReader" target="genbankreader.ArgumentParser" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="coordinates" source="genbankreader.CodingSequence" target="genbankreader.Coordinates" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="genbankreader.GenBankFeatures" target="genbankreader.Gene" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="genbankreader.GeneBankFileParser" target="genbankreader.GenBankFeatures" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="cdsElements" source="genbankreader.GenBankFeatures" target="genbankreader.CodingSequence" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;CodingSequence&gt;"/>
+    <HasRelation name="coordinates" source="genbankreader.Gene" target="genbankreader.Coordinates" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="genbankreader.Gene" target="genbankreader.Coordinates" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="direction" source="genbankreader.Gene" target="genbankreader.SequenceOrientation" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="genbankreader.GenBankFeatures" target="genbankreader.CodingSequence" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="geneElements" source="genbankreader.GenBankFeatures" target="genbankreader.Gene" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Gene&gt;"/>
     <UseRelation source="genbankreader.Gene" target="genbankreader.SequenceOrientation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="direction" source="genbankreader.CodingSequence" target="genbankreader.SequenceOrientation" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="genbankreader.Gene" target="genbankreader.Coordinates" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="genbankreader.CodingSequence" target="genbankreader.Coordinates" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="genbankreader.CodingSequence" target="genbankreader.SequenceOrientation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="coordinates" source="genbankreader.Gene" target="genbankreader.Coordinates" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="genbankreader.GenBankReader" target="genbankreader.GeneBankFileParser" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="geneElements" source="genbankreader.GenBankFeatures" target="genbankreader.Gene" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Gene&gt;"/>
   </ClassDiagramRelations>
 </ClassDiagram>
