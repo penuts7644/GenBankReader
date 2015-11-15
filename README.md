@@ -3,7 +3,7 @@
 ### What is this repository for? ###
 
 * This program is able to extract data from a GenBank file and return the required information.
-* Version 0.0.1
+* Version 1.0.0
 * Copyright (c) 2015 Wout van Helvoirt
 
 ### How do I get set up? ###
