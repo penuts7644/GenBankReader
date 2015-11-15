@@ -38,7 +38,7 @@ NOTE 2: The GenBank reader assumes that only one DNA sequence
         is given, only the first item in the GenBank file will be
         processed.
 
-How to run the file ?
+How to run the file?
 ====================================================================
 
 To run the project from the command line, go to the dist folder and
