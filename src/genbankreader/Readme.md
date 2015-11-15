@@ -39,7 +39,7 @@ number of CDSs       3
 Use case 2 example:  
  
 ```
-demo@pc: java -jar GenBankReader.jar -i example_data/genbank_file.gb -G REV7 
+demo@pc: java -jar GenBankReader.jar -i data/example_genbank_file.gb -G REV7 
 >gene REV7 sequence
 TTAAAACAAAGATCCAAAAATGCTCTCGCCCTCTTCATATTGAGAATACACTCCATTCAAAATTTTGTCGTCACCGCTGA
 TTAATTTTTCACTAAACTGATGAATAATCAAAGGCCCCACGTCAGAACCGACTAAAGAAGTGAGTTTTATTTTAGGAGGT
@@ -56,7 +56,7 @@ CTCTACCCATCTATTCAT
 Use case 3 example:  
  
 ```
-demo@pc: java -jar GenBankReader.jar -i example_data/genbank_file.gb -C [AR].* 
+demo@pc: java -jar GenBankReader.jar -i data/example_genbank_file.gb -C [AR].* 
 >CDS Axl2p sequence
 MTQLQISLLLTATISLLHLVVATPYEAYPIGKQYPPVARVNESFTFQISNDTYKSSVDKTAQITYNCFDLPSWLSFDSSS
 RTFSGEPSSDLLSDANTTLYFNVILEGTDSADSTSLNNTYQFVVTNRPSISLSSDFNLLALLKNYGYTNGKNALKLDPNE
@@ -79,7 +79,7 @@ FGSLF
 Use case 4 example (the /gene tag is listed for genes and the /product tag for CDS's):  
  
 ```
-demo@pc: java -jar GenBankReader.jar -i example_data/genbank_file.gb -F 500..5000
+demo@pc: java -jar GenBankReader.jar -i data/example_genbank_file.gb -F 500..5000
 FEATURE;TYPE;START;STOP;ORIENTATION
 AXL2;gene;687;3158;Forward
 Axl2p;CDS;687;3158;Forward
@@ -90,7 +90,7 @@ Rev7p;CDS;3300;4037;Reverse
 Use case 5 example:  
  
 ```
-demo@pc: java -jar GenBankReader.jar -i example_data/genbank_file.gb -S aaarttt
+demo@pc: java -jar GenBankReader.jar -i data/example_genbank_file.gb -S aaarttt
 site search: AAARTTT (regex: AAA[AG]TTT)
 POSITION;SEQUENCE;GENE
 2109;AAAATTT;AXL2
