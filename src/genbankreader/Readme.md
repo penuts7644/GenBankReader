@@ -6,8 +6,8 @@ The user is able to run this Java 8 program via command line. A few input option
 
 ### Default options: ###
 
-  1. -h, --help, Display help for this program.
-  2. -i, --infile <\INFILE>, Input Genbank file to proces.
+  1. \-h, --help, Display help for this program.
+  2. \-i, --infile <\INFILE\>, Input Genbank file to proces.
 
 
 ### Usecases: ###
