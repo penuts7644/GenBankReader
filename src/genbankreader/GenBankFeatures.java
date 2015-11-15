@@ -187,7 +187,7 @@ public class GenBankFeatures {
         if (sb.length() > 0) {
             return String.format("%s", sb);
         } else {
-            return "Gene pattern '" + gene + "' was not found in the given GenBank file.";
+            return "Gene pattern '" + gene + "' was not found in the given GenBank.";
         }
     }
 
@@ -224,7 +224,7 @@ public class GenBankFeatures {
         if (sb.length() > 0) {
             return String.format("%s", sb.replace(0, 1, ""));
         } else {
-            return "CDS pattern '" + cds + "' was not found in the given GenBank file.";
+            return "CDS pattern '" + cds + "' was not found in the given GenBank.";
         }
     }
 
@@ -232,42 +232,47 @@ public class GenBankFeatures {
     * Get features that lay between min and max coordinates.
     * @param maxCoordinates is a string with min and max coordinates.
     * @return string with al found features.
+    * @trows NumberFormatException when maxCoordinates does not have correct format.
     */
     public String fetchFeatures(final String maxCoordinates) {
 
-        /* Split coordinates and create Coordinates object. */
-        StringBuilder sb = new StringBuilder();
-        String[] coordinates = maxCoordinates.split("\\.\\.");
-        Coordinates cs = new Coordinates(Integer.parseInt(coordinates[0]),
-                Integer.parseInt(coordinates[coordinates.length - 1]));
+        try {
+            /* Split coordinates and create Coordinates object. */
+            StringBuilder sb = new StringBuilder();
+            String[] coordinates = maxCoordinates.split("\\.\\.");
+            Coordinates cs = new Coordinates(Integer.parseInt(coordinates[0]),
+                    Integer.parseInt(coordinates[coordinates.length - 1]));
 
-        /* For each gene element add gene features to sb if coordinates are whithin given coordinates. */
-        for (Gene g : getGeneElements()) {
-            if (g.getCoordinates().getFirst() > cs.getFirst()
-                    && g.getCoordinates().getLast() < cs.getLast()) {
+            /* For each gene element add gene features to sb if coordinates are whithin given coordinates. */
+            for (Gene g : getGeneElements()) {
+                if (g.getCoordinates().getFirst() > cs.getFirst()
+                        && g.getCoordinates().getLast() < cs.getLast()) {
 
-                sb.append("\n".concat(g.getGene() + ";gene;" + g.getCoordinates().getFirst() + ";"
-                        + g.getCoordinates().getLast() + ";" + g.getDirection()));
+                    sb.append("\n".concat(g.getGene() + ";gene;" + g.getCoordinates().getFirst() + ";"
+                            + g.getCoordinates().getLast() + ";" + g.getDirection().getType()));
 
-                /* If gene has been added, check for coresponding CDS element and add it to sb. */
-                for (CodingSequence c : getCdsElements()) {
-                    if (g.getCoordinates().getFirst() == c.getCoordinates().getFirst()
-                            && g.getCoordinates().getLast() == c.getCoordinates().getLast()) {
+                    /* If gene has been added, check for coresponding CDS element and add it to sb. */
+                    for (CodingSequence c : getCdsElements()) {
+                        if (g.getCoordinates().getFirst() == c.getCoordinates().getFirst()
+                                && g.getCoordinates().getLast() == c.getCoordinates().getLast()) {
 
-                        sb.append("\n".concat(c.getProduct() + ";CDS;" + c.getCoordinates().getFirst() + ";"
-                                + c.getCoordinates().getLast() + ";" + g.getDirection()));
+                            sb.append("\n".concat(c.getProduct() + ";CDS;" + c.getCoordinates().getFirst() + ";"
+                                    + c.getCoordinates().getLast() + ";" + g.getDirection().getType()));
+                        }
                     }
                 }
             }
-        }
 
-        /* When no matches, return 'nothing found' message. */
-        if (sb.length() > 0) {
-            return String.format("%s%s",
-                    "FEATURE;TYPE;START;STOP;ORIENTATION",
-                    sb);
-        } else {
-            return "No gene(s) or CDS(s) was/were found between '" + maxCoordinates + "' in the given GenBank file.";
+            /* When no matches, return 'nothing found' message. */
+            if (sb.length() > 0) {
+                return String.format("%s%s",
+                        "FEATURE;TYPE;START;STOP;ORIENTATION",
+                        sb);
+            } else {
+                return "No gene(s) or CDS(s) was/were found between '" + maxCoordinates + "' in the given GenBank.";
+            }
+        } catch (NumberFormatException e) {
+            return "A problem occured: '" + maxCoordinates + "' should be two integers seperated by two dots.";
         }
     }
 
@@ -293,7 +298,7 @@ public class GenBankFeatures {
         iupacCodes.put("N", "[ACGT]");
 
         /* Remove regex related charecters from pattern. */
-        String filteredPattern = pattern.replaceAll("[^\\w]*", "");
+        String filteredPattern = pattern.replaceAll("[^\\w]*", "").toUpperCase();
         String regexPattern = "";
 
         /* Build own regex pattern by using the previously initialized HashMap */
@@ -336,7 +341,7 @@ public class GenBankFeatures {
                     "POSITION;SEQUENCE;GENE",
                     sb);
         } else {
-            return "The pattern '" + filteredPattern + "' did not result in matches within the given GenBank file.";
+            return "The pattern '" + filteredPattern + "' did not result in matches within the given GenBank.";
         }
     }
 }
