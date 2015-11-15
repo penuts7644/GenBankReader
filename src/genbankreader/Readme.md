@@ -4,11 +4,13 @@
 
 The user is able to run this Java 8 program via command line. A few input options are available for the user:
 
-  Default options:
+Default options:
+
   1. -h, --help, Display help for this program.
   2. -i, --infile, Input Genbank file to proces.
   
-  Usecases:
+Usecases:
+
   1. -s, --summary, Creates a textual summary of the parsed Genbank file.
   2. -G, --fetch_gene \<GENE NAME (-PATTERN)>, Returns nucleotide sequences of the genes that match the gene name regex pattern, in Fasta format.
   3. -C, --fetch_cds \<PRODUCT NAME (-PATTERN)>, Returns the amino acid sequences of the CDSs that match the product name regex pattern, in Fasta format.
@@ -16,6 +18,7 @@ The user is able to run this Java 8 program via command line. A few input option
   5. -S, --find_sites \<DNA SEQ WITH IUPAC CODES>, Lists the locations of all the sites where the DNA pattern is found: position, actual sequence and (if relevant) the gene in which it resides.
 
 ** Note 1: -i option and one of the usecases (-s, -C, -G, -F, -S) are required. **
+
 ** Note 2: The GenBank reader assumes that only one DNA sequence resides within a single GenBank file. If multi-GenBank file is given, only the first item in the GenBank file will be processed. **
 
 Below are examples for each use case. The example GenBank files used, can be found in the 'data' folder within this repository.  
