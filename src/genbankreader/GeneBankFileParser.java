@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package week5_final_assignments.choice1_genbank_reader;
+package genbankreader;
 
 import java.io.BufferedReader;
 import java.io.File;

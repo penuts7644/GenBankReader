@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package week5_final_assignments.choice1_genbank_reader;
+package genbankreader;
 
 /**
  * @author Wout van Helvoirt [wout.van.helvoirt@gmail.com]
