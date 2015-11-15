@@ -72,28 +72,28 @@ public class ArgumentParser {
                 .argName("GENE NAME (-PATTERN)")
                 .hasArg()
                 .longOpt("fetch_gene")
-                .desc("Returns nucleotide sequences of the genes that match the gene name pattern, in Fasta format.")
+                .desc("Returns nucleotide sequences of the genes that match the gene name regex pattern, in Fasta format.")
                 .build();
         Option fetchCds = Option.builder("C")
                 .argName("PRODUCT NAME (-PATTERN)")
                 .hasArg()
                 .longOpt("fetch_cds")
                 .desc("Returns the amino acid sequences of the CDSs that match the product"
-                        + "name pattern, in Fasta format.")
+                        + " name regex pattern, in Fasta format.")
                 .build();
         Option fetchFeatures = Option.builder("F")
                 .argName("COORDINATES")
                 .hasArg()
                 .longOpt("fetch_features")
                 .desc("Returns all features with name, type, start, stop and orientation between the given coordinates."
-                        + "Only features that are completely covered on the given region are listed.")
+                        + "Only features that are completely covered within the given region are listed.")
                 .build();
         Option findSites = Option.builder("S")
                 .argName("DNA SEQ WITH IUPAC CODES")
                 .hasArg()
                 .longOpt("find_sites")
                 .desc("Lists the locations of all the sites where the DNA pattern is found: position, actual sequence"
-                        + "and (if relevant) the gene in which it resides.")
+                        + " and (if relevant) the gene in which it resides.")
                 .build();
 
         /* Add optional options to subOptions and add main options (incl subOptions Group) to all available options. */
