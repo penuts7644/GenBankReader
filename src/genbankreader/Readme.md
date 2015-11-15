@@ -21,6 +21,16 @@ The user is able to run this Java 8 program via command line. A few input option
 
 ** Note 2: The GenBank reader assumes that only one DNA sequence resides within a single GenBank file. If multi-GenBank file is given, only the first item in the GenBank file will be processed. **
 
+## How to run the file? ##
+
+To run the project from the command line, go to the 'dist' folder and type the following:
+
+```java -jar "GenBankReader.jar"```
+
+The Line above will should be followed by at least one GenBank file (-i) and one of the five usecases (-s, -C, -G, -F, -S). 
+
+** Note 3: Usecases 2, 3, 4 and 5 need an argument. **
+
 Below are examples for each use case. The example GenBank files used, can be found in the 'data' folder within this repository.  
 
 Use case 1 example:  
