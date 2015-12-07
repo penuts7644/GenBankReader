@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package genbankreader;
+package nl.bioinf.wvanhelvoirt.genbankreader;
 
 import java.util.HashMap;
 import java.util.List;

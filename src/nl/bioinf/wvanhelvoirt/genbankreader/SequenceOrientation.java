@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package genbankreader;
+package nl.bioinf.wvanhelvoirt.genbankreader;
 
 /**
  * @author Wout van Helvoirt [wout.van.helvoirt@gmail.com]

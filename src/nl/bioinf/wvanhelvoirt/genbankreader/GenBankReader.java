@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package genbankreader;
+package nl.bioinf.wvanhelvoirt.genbankreader;
 
 import java.io.FileNotFoundException;
 import java.util.List;
