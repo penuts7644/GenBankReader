@@ -13,4 +13,4 @@
 * Fork this repository and use the bitbucket link to add the forked repository to your editing program of choice.
 * If you want to use the program without applying adjustments, you should download de dist folder.
 
-** Note: A UML schemetic of this program can be found in the downloads section of this repository. **
+**Note: A UML schemetic of this program can be found in the downloads section of this repository.**
